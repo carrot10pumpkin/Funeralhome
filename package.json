@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@contentful/rich-text-html-renderer": "^16.3.5",
+    "@contentful/rich-text-plain-text-renderer": "^16.0.13",
+    "contentful": "^10.9.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}
