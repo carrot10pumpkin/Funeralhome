@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-// app.use(express.static('public'))
+app.use(express.static('public'))
 
 // requesting info 
 
@@ -182,7 +182,69 @@ app.get('/', async(req, res) => {
 
 app.get('/about', async (req, res) => {
   //<-- Used to find items. This is a blueprint for mongoDB.
-    res.render('pages/about',{}); // <-- Tells ejs to populate list of items into the html. 
+
+  var Items = []
+    
+ client.getEntries()
+ .then((response) => {
+     
+ 
+
+
+   
+     
+   let itemsTextWithPic = [];
+   response.items.forEach((item) => {
+       let gallery = []
+       item.fields.productGallery?.forEach((oi)=> {
+         gallery.push(
+
+           {url: `https:${oi.fields.file.url}?w=200`}
+         )
+
+       });
+     if (item.fields.productGallery) {
+       // console.log(JSON.stringify(entry.fields.productGallery));
+
+      item.fields.productGallery.forEach( (imageItem)=>{
+        
+          
+         itemsTextWithPic.push( 
+           {
+              text: documentToPlainTextString(item.fields.productDescription),
+                picUrl: `https:${imageItem.fields.file.url}?w=100`
+           }
+       );          
+     
+ 
+       }
+ 
+ 
+       )
+ 
+     }
+
+
+  
+     
+      
+
+   });
+
+
+            res.render('pages/about', {
+           
+             
+           //  items: plainTextItems
+            items: itemsTextWithPic
+ 
+     
+              });
+
+ });
+ // <-- Tells ejs to populate list of items into the html. 
+  
+   
   });
 
 
