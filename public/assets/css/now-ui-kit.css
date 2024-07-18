@@ -5603,7 +5603,7 @@ img {
 }
 
 .index-page .page-header {
-  height: 125vh;
+  min-height: 104vh;
 }
 
 .index-page .page-header .container>.content-center {
@@ -5980,12 +5980,13 @@ img {
 }
 
 .page-header {
-  min-height: 100vh;
-  max-height: 999px;
+  /* min-height: 95vh;
+  max-height: 999px; */
   padding: 0;
   color: #FFFFFF;
   position: relative;
   overflow: hidden;
+  margin-top: -100px;
 }
 
 .page-header>.content {
@@ -6031,6 +6032,7 @@ img {
   padding: 0 15px;
   width: 100%;
   max-width: 880px;
+  padding-top: 20%;
 }
 
 .page-header footer {
@@ -6040,10 +6042,11 @@ img {
 }
 
 .page-header .container {
-  height: 100%;
-  z-index: 1;
+  /* height: 100%;
+  z-index: 1; */
   text-align: center;
-  position: relative;
+  /* position: relative; */
+  padding-top:15%;
 }
 
 .page-header .category,
@@ -6075,11 +6078,23 @@ img {
   /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(224, 23, 3, 0.6));
   /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(224, 23, 3, 0.6));
+  background: -moz-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(19, 17, 17, 0.6));
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(224, 23, 3, 0.6));
+  background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(0, 0, 0, 0.6)g);
   /* Standard syntax */
 }
+
+
+.section-team{
+  padding: 100px 0;
+  
+}
+
+.section-team .column {
+  /* padding: 0 75px 0 25px; */
+  /* padding: 0 18px 0 25px; */
+}
+
 
 .section-story-overview {
   padding: 50px 0;
